@@ -3,3 +3,5 @@
 dist
 __pycache__
 test.py
+file_1.json
+file_2.json
