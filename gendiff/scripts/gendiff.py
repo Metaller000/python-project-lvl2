@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 import argparse
 import json
-import os
 
 
 def get_str(val):
-    if val == False:
+    if val is False:
         return 'false'
-    elif val == True:
+    elif val is True:
         return 'true'
     else:
         return val
