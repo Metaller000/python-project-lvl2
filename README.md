@@ -4,3 +4,5 @@
 
 ## Usage
 [![asciicast](https://asciinema.org/a/5pB0CYv28DlyU5qtE0MIm0MSa.svg)](https://asciinema.org/a/5pB0CYv28DlyU5qtE0MIm0MSa)
+
+[![asciicast](https://asciinema.org/a/wHcExkhy8ICzZaWgedOLZva6P.svg)](https://asciinema.org/a/wHcExkhy8ICzZaWgedOLZva6P)
