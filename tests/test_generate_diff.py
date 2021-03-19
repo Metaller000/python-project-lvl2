@@ -64,3 +64,39 @@ def test_json_yaml_generate_diff_2():
     data_2 = generate_diff(f'{full_path}/file_3.json',
                            f'{full_path}/file_4.yml')
     assert data_2 == data_1
+
+
+def test_json_generate_diff_plain_1():
+    data_1 = ''
+    with open(f'{full_path}/result_3') as file:
+        data_1 = file.read()
+
+    stile = 'plain'
+    data_2 = generate_diff(f'{full_path}/file_3.json',
+                           f'{full_path}/file_4.json',
+                           stile)
+    assert data_2 == data_1
+
+
+def test_yaml_generate_diff_plain_1():
+    data_1 = ''
+    with open(f'{full_path}/result_3') as file:
+        data_1 = file.read()
+
+    stile = 'plain'
+    data_2 = generate_diff(f'{full_path}/file_3.yml',
+                           f'{full_path}/file_4.yml',
+                           stile)
+    assert data_2 == data_1
+
+
+def test_json_yaml_generate_diff_plain_1():
+    data_1 = ''
+    with open(f'{full_path}/result_3') as file:
+        data_1 = file.read()
+
+    stile = 'plain'
+    data_2 = generate_diff(f'{full_path}/file_3.json',
+                           f'{full_path}/file_4.yml',
+                           stile)
+    assert data_2 == data_1
