@@ -3,6 +3,7 @@ import json
 import yaml
 from gendiff.scripts.plain import plain
 from gendiff.scripts.stylish import stylish
+from gendiff.scripts.json_viev import json_viev
 
 
 def data_sort(data):
@@ -53,10 +54,12 @@ def diff(data_1, data_2):
 
 
 def viever(data={}, stile='stylish'):
-    if stile == 'stylish':
+    if stile.lower() == 'stylish':
         return stylish(data)
-    elif stile == 'plain':
+    elif stile.lower() == 'plain':
         return plain(data)[:-1]
+    elif stile.lower() == 'json':
+        return json_viev(data)
 
 
 def generate_diff(file_1, file_2, stile='stylish'):
