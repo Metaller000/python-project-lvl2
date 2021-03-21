@@ -1,4 +1,3 @@
-
 def complex_or_val(value):
     ret_val = ""
     if type(value) is not dict:

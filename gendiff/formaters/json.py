@@ -1,4 +1,3 @@
-
 def convert_value(val):
     if val in ('false', 'true', 'null') or type(val) is int:
         return val
@@ -6,7 +5,7 @@ def convert_value(val):
         return f'"{val}"'
 
 
-def json_viev(data={}, spaces_num=0):
+def json(data={}, spaces_num=0):
     spaces = spaces_num * ' '
 
     output = '{'
@@ -19,7 +18,7 @@ def json_viev(data={}, spaces_num=0):
             key_out = f'{key}'
 
         if type(value) is dict:
-            values = json_viev(value, spaces_num + 4)
+            values = json(value, spaces_num + 4)
             output = f'{output}\n{spaces}    "{key_out}": {values},'
         else:
             output = f'{output}\n{spaces}    "{key_out}": {convert_value(value)},'

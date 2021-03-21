@@ -1,28 +1,8 @@
 #!/usr/bin/env python3
-import json
-import yaml
-from gendiff.plain import plain
-from gendiff.stylish import stylish
-from gendiff.json_viev import json_viev
-
-
-def data_sort(data):
-    json_data = json.dumps(data, sort_keys=True)
-    json_data = json_data.replace('null', '"null"')
-    json_data = json_data.replace('true', '"true"')
-    json_data = json_data.replace('false', '"false"')
-    return json.loads(json_data)
-
-
-def get_dict_from_file(file):
-    data = {}
-    if '.json' in file:
-        with open(file) as f:
-            data = json.load(f)
-    if '.yml' in file:
-        with open(file) as f:
-            data = yaml.load(f, Loader=yaml.FullLoader)
-    return data
+from gendiff.formaters.plain import plain
+from gendiff.formaters.stylish import stylish
+from gendiff.formaters.json import json
+from gendiff.gen_loader import data_sort, get_dict_from_file
 
 
 def diff(data_1, data_2):
@@ -59,11 +39,13 @@ def viever(data={}, stile='stylish'):
     elif stile.lower() == 'plain':
         return plain(data)[:-1]
     elif stile.lower() == 'json':
-        return json_viev(data)
+        return json(data)
 
 
 def generate_diff(file_1, file_2, stile='stylish'):
-    data = diff(get_dict_from_file(file_1), get_dict_from_file(file_2))
+    gen_1 = get_dict_from_file(file_1)
+    gen_2 = get_dict_from_file(file_2)
+    data = diff(gen_1, gen_2)
     data = data_sort(data)
 
     return viever(data, stile)

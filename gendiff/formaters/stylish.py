@@ -1,4 +1,3 @@
-
 def stylish(data={}, spaces_num=0):
     spaces = spaces_num * ' '
 
