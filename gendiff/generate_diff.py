@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import json
 import yaml
-from gendiff.scripts.plain import plain
-from gendiff.scripts.stylish import stylish
-from gendiff.scripts.json_viev import json_viev
+from gendiff.plain import plain
+from gendiff.stylish import stylish
+from gendiff.json_viev import json_viev
 
 
 def data_sort(data):
