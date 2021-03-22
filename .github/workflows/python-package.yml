@@ -2,10 +2,9 @@ name: Python package
 
 on:
   push:
-    branches:
-      - "**"
-    tags:
-      - "**"
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
@@ -29,7 +28,15 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install -U pip
           pip install poetry
+
+      - name: Build package
+        run: |
+          make build
+
+      - name: Install package
+        run: |
           make install
 
       - name: Run linter
