@@ -1,6 +1,6 @@
 import pytest
 import os
-from gendiff.generate_diff import generate_diff
+from gendiff import generate_diff
 
 full_path = f'{os.path.dirname(os.path.abspath(__file__))}/fixtures'
 

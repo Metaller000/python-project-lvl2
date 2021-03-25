@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "1.1.0"
+version = "1.1.1"
 description = "difference calculator"
 authors = ["Metaller <metaller7440326@gmail.com>"]
 packages = [
@@ -21,4 +21,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-gendiff = "gendiff.scripts.gendiff:main"
+gendiff = "gendiff.gendiff:main"
