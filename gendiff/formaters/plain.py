@@ -1,7 +1,7 @@
 def complex_or_val(value):
     ret_val = ""
     if type(value) is not dict:
-        if value not in ['false', 'true', 'null']:
+        if value not in ['false', 'true', 'null'] and not isinstance(value, int):
             ret_val = f"'{value}'"
         else:
             ret_val = value
